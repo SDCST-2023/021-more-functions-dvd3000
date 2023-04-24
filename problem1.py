@@ -13,8 +13,14 @@ assert convertTemp(10,'C') == 50
 assert converTemp(32,'F') == 0
 """
 
-def convertTemp():
-    return
+def convertTemp(a,b):
+    o = 0
+    if b == 'C':
+        o = a * (9/5) + 32
+    else:
+        o = (a - 32) * 5/9
+
+    return round(o,2)
 
 def tests():
     assert convertTemp(10,'C') == 50.00

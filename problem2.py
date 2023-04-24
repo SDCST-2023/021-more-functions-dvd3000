@@ -21,8 +21,37 @@ assert triangle(1,1,4) == 0
 (2 points)
 """
 
-def triangle():
-    return
+def triangle(i1,i2,i3):
+    # find hypotenuse
+    if (i1 >= i2) and (i1 >= i3):
+        a = i3
+        b = i2
+        c = i1
+    elif (i2 >= i1) and (i2 >= i3):
+        a = i3
+        b = i1
+        c = i2
+    else:
+        a = i1
+        b = i2
+        c = i3
+    if c ** 2 == (a ** 2) + (b ** 2):
+        if a + b < c:
+            return 0
+        else:
+            return 2
+    elif c ** 2 < (a ** 2) + (b ** 2):
+        if a + b < c:
+            return 0
+        else:
+            return 1
+    elif c ** 2 > (a ** 2) + (b ** 2):
+        if a + b < c:
+            return 0
+        else:
+            return 3
+    else:
+        return 0
 
 def tests():
     assert triangle(12,5,13) == 2     
